@@ -9,4 +9,6 @@
     = stylesheet_link_tag "screen"
     = javascript_include_tag  "all"
   %body{:class => page_classes}
-    = yield
+    .wrapper
+      = yield
+    .timeline
