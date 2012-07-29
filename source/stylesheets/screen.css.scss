@@ -4,7 +4,7 @@
 @import "partials/mixins";
 
 $sans-serif: "helvetica neue", helvetica, arial, sans-serif;
-$serif: palantino;
+$serif: Palatino;
 
 // styles start here
 
@@ -16,6 +16,44 @@ html {
   @include background-size(cover);
   background: url(/images/golden-gate.jpg) no-repeat center top fixed;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+ul {
+  margin-bottom: 15px;
+  color: #666;
+  padding-left: 20px;
+  li {
+    list-style-type: square;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+img { max-width: 100%; }
 
 header.main {
   @include background-image(linear-gradient(rgba(41,41,40,0.9), rgba(0,0,0,0.9)));
@@ -57,18 +95,17 @@ header.main {
 
 article {
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 section {
   @include box-styles;
   font-family: $serif;
   position: relative;
-  padding-top: 60px;
   header {
     @include background-image(linear-gradient(#e2e2e2, #959595));
-    @include border-top-radius(10px);
     @include box-shadow(inset 0 1px 0 rgba(255,255,255,1));
+    @include section-tip;
     border: 1px solid #666;
     border-left: none;
     text-align: center;
@@ -84,11 +121,28 @@ section {
     text-shadow: 0 1px 1px #fff;
     color: #666;
   }
+  &.day {
+    padding-top: 180px;
+    background: #fff;
+    &.one { background: #fff url(/images/maps/day-1.jpg) 0 0 no-repeat; }
+    &.two { background: #fff url(/images/maps/day-2.jpg) 0 0 no-repeat; }
+    &.three { background: #fff url(/images/maps/day-3.jpg) 0 0 no-repeat; }
+    &.four { background: #fff url(/images/maps/day-4.jpg) 0 0 no-repeat; }
+    &.five { background: #fff url(/images/maps/day-5.jpg) 0 0 no-repeat; }
+    &.six { background: #fff url(/images/maps/day-6.jpg) 0 0 no-repeat; }
+    img {
+      @include inline-block;
+      @include border-radius(8px);
+      width: 100px;
+      margin: 0 5px 10px 0;
+    }
+  }
 }
 
 .date {
   @include border-radius(8px);
   position: absolute;
+  top: 65px;
   padding: 10px;
   background: rgba(0,0,0,0.85);
   span { 
@@ -99,6 +153,29 @@ section {
     text-align: center;
     &.month { font-size: 12px; }
     &.day { font-size: 36px; }
+  }
+}
+
+h2.day {
+  @include background-image(linear-gradient(rgba(41,41,40,0.9), rgba(0,0,0,0.9)));
+  @include box-shadow(inset 0 0 10px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.35));
+  @include border-radius(50%);
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  margin: 0 auto 30px;
+  line-height: inherit;
+  span { 
+    display: block;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    &.label { 
+      font-size: 12px;
+      margin-top: 27px;
+    }
+    &.value { font-size: 36px; }
   }
 }
 
@@ -133,7 +210,7 @@ section {
   }
   blockquote {
     @include box-styles;
-    @include section-tip;
+    @include section-tip($border-tip: true);
     font-family: $serif;
     color: #666;
     font-size: 24px;
@@ -143,6 +220,7 @@ section {
     position: relative;
   }
   .flight-info {
+    @include background-size(auto);
     height: 350px;
     background: #fff url(/images/flight-map.jpg) center center no-repeat;
     p {
@@ -153,7 +231,67 @@ section {
       line-height: 18px;
       padding-left: 25px;
       color: #999;
-      margin: 235px 20px 0 25px;
+      margin: 275px 20px 0 25px;
     }
   }
 }
+
+.avatar {
+  @include inline-block;
+  @include border-radius(50%);
+  @include background-size(100%);
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  text-indent: -100%;
+  margin: 0 5px 10px 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  &.brdrck     { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2326112273/picswitch-brdrck-sJC7Ax.png); }
+  &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
+  &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
+  &.joshuarudd { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1160399946/joshua_crop.jpg); }
+  &.chadbercea { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2398490084/wnciugrzwe58kxgu0rc7.jpeg); }
+  &.cypriss {
+    @include background-size(150%);
+    background: url(https://twimg0-a.akamaihd.net/profile_images/1214777950/jonathan_640.jpg) center top no-repeat;
+  }
+  &.rnorgan { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2302468473/sd8dp2qkqdwb26c82xlr.jpeg); }
+  &.brianbenitez { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2147034720/avatar.png); }
+  &.jayrobinson { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2315483970/4j3c38vdqs960cdw8yq4.png); }
+  &.marshallbock { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1248267100/Profile.png); }
+  &.juanarreguin { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2301992358/image.jpg); }
+  &.noracalabrese { background-image: url(http://dribbble.s3.amazonaws.com/users/16671/avatars/original/dribble.jpg?1305136420); }
+  &.neighthen { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1599836413/profile_small.jpg); }
+  &.meyer { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2318001927/dz3x1ok4mado1vl1m3ru.png); }
+  &.pixeliris { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2433175803/1yldek8mgj2ab079p287.png); }
+  &.joncrawford { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2383133547/ihfwjisde3cu283wdn6f.jpeg); }
+  &.janette { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1335280036/spring2011.jpg); }
+  &.adamhendle { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2169236472/adamleah2.jpg); }
+  &.coreyr { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1496921904/262915_10100287451172368_2732438_51158296_5280262_n.jpg); }
+  &.thisisrobv { 
+    @include background-size(120%);
+    background-image: url(https://twimg0-a.akamaihd.net/profile_images/1572072322/photo.JPG);
+  }
+  &.ariellescott { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2064402384/arielleatcomp.jpg); }
+  &.baxterstrikes { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2218403983/rsz_1133609337298144.jpg); }
+  &.bennyfreshness { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1899353185/headshot.jpg); }
+  &.chriseppstein { 
+    @include background-size(115%);
+    background-position: right 0;
+    background-image: url(https://twimg0-a.akamaihd.net/profile_images/1157553493/DSCN1412.jpg); 
+  }
+  &.ped { background-image: url(https://twimg0-a.akamaihd.net/profile_images/55715463/eu-ms.jpg); }
+  &.hone02 { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2189439501/terence.jpg); }
+  &.seaofclouds { background-image: url(https://twimg0-a.akamaihd.net/profile_images/20609372/birdie-icon.png); }
+  &.nrrrdcore { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2233437415/image.jpg); }
+  &.zapnap {
+    @include background-size(133%);
+    background-position: right 0;
+    background-image: url(https://twimg0-a.akamaihd.net/profile_images/2294134316/b2j58mqsubr3svlxbakn.jpeg); 
+  }
+  &.jsncostello { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1352411554/JC.png); }
+  &.jasonlong { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1409429799/jason_summer.jpg); }
+  &.rsanheim { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2099222922/rob-jruby-shirt.jpeg); }
+}
+

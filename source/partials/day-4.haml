@@ -1,0 +1,63 @@
+%article
+  = partial(:'partials/day-bubble', :locals => {:value => "4"})
+  %section.day.four
+    %header A day at Heroku
+
+    = partial(:'partials/date', :locals => {:day => "21"})
+
+    %h2 A day at Heroku
+
+    %p As an artist/designer/developer I use tools to make my job easier. One of those tools I use very often is [Heroku], a git managed EC2 hosting solution.
+
+    %p A couple of years back when I started at Relevance, [Terrence Lee] interviewed at Relevance. He ended up taking a job with Heroku and still works there. I reached out to him and told him what I was up to and he said that I could totally come to the office and meet up with some people there.
+
+    %h3 The Office
+
+    %p I met [Pedro Belo] at the office as Terrence was in Europe at the time. Pedro showed me around the office.
+
+    %p
+      %a.avatar.hone02{:href => "https://twitter.com/hone02", :name => "Terence Lee"} Terence Lee
+      %a.avatar.ped{:href => "https://twitter.com/ped", :name => "Pedro Belo"} Pedro Belo
+
+    %p The Heroku office is f*king amazing! Complete with ping pong, billiards, big screen projector with couches, nap room, office bicycles, bicycle storage and they even have jellyfish (yes, real jellyfish!). There is also a rooftop hangout spot with a pretty nice view of the city where they could have a BBQ.
+
+    %p One thing I noticed was a giant enamel painted metal octocat sculpture/trophy. Some time back there was a website that was launched by some githubbers about a [dodgeball tournament]. Well, heroku won. I asked if this was going to be like the Stanley Cup where the trophy is passed around to the winner's office every year, adding the name of the winner and date of the tournament. Pedro laughed... he said that he didn't know but agreed that would be cool.
+
+    %p
+      = tag :img, :src => "/images/heroku/front-door.jpg"
+      = tag :img, :src => "/images/heroku/company-dashboard.jpg"
+      = tag :img, :src => "/images/heroku/heroku-status-dashboard.jpg"
+      = tag :img, :src => "/images/heroku/kitchen.jpg"
+      = tag :img, :src => "/images/heroku/relaxation-room.jpg"
+      = tag :img, :src => "/images/heroku/jellyfish.jpg"
+      = tag :img, :src => "/images/heroku/rooftop.jpg"
+      = tag :img, :src => "/images/heroku/dogeball-octocat-trophy.jpg"
+
+    %h3 A Bit'o'Hacking &amp; More of the Team
+
+    %p I got set up at a standing desk in the big bullpen upstairs. I couldn't stop thinking about what I was doing with Chris Eppstein the night before. Even though I knew that he could probably implement something better in Ruby for Compass itself... I started tinkering with some ideas using basic built-in [sass color manipulation functions].
+
+    %p The idea that I was working with was using variables to define primary colors and then allowing secondary colors and tertiary colors to be based on those. Then I wrote a mixin to use some basic words to define manipulation like "light/dark" as default math to manipulate target color in the mixin and the word "very" to emphasize how far I wanted to manipulate the color.
+
+    %p This is hard. I ended up with something that was interesting, but definitely not fully baked. I did show it to Pedro and he seemed pretty into it and thought that it was interesting too. He was like... dude, you should meet our designer and show him what you are doing.
+
+    %p He walked me to a room where [Todd Matthews] was working on [gistdeck], a way to publish slide presentations via github gists. Anyways, I showed him what I was up to, talked about what I was doing at Relevance, why i was in SF, etc. It was cool to talk with him. Heroku has a similar attitude towards art in tech. He brought me to the vault where they keep the t-shirts and posters and gave me a couple of shirts and a silkscreened event poster that they did.
+
+    %p It was nice talking with Todd. He talked about Art at Heroku, the work he did for their website (which is really nice!)... he showed me some stuff that they were doing for the admin side of the service. We talked a bit about the designer/dev ratio in a company and teams, how they work, etc. I was sorry to interrupt him at first... but then later was pretty glad that we did. Maybe Heroku and Relevance can do some work together on something in the future... seems like they have the kind of culture where that could happen.
+
+    %p
+      %a.avatar.seaofclouds{:href => "https://twitter.com/seaofclouds", :name => "Todd Matthews"} Todd Matthews
+
+      %h3 Ping-Pong Break
+
+      %p Pedro grabbed me at some point in the day and we played some ping-pong. He beat my ass 3 games in a row. He is a good ping-pong player.
+
+      %p On a side note, they have a really nice HDTV on the wall upstairs with some widgets showing some different things on it... one of which is a photo of the current ping-pong champion. Pedro built an app that keeps track of who's played whom and what the stats are, etc. Whoever has the best record, gets to be famous... at Heroku anyway.
+
+    %p
+      = tag :img, :src => "/images/heroku/pedro-ping-pong.jpg"
+      = tag :img, :src => "/images/heroku/ping-pong-leader.jpg"
+
+    %h3 Thanks
+
+    %p I want to take a moment to say thanks to Terrence and Pedro for setting me up for a day in the Heroku HQ. I had a wonderful time in their office. Even though I got my ass beat in ping pong, it was really great to see where they build a great tool I use all the time.
