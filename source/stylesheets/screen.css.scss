@@ -242,11 +242,10 @@ h2.day {
   @include background-size(100%);
   width: 80px;
   height: 80px;
-  overflow: hidden;
-  text-indent: -100%;
   margin: 0 5px 10px 0;
   background-position: 0 0;
   background-repeat: no-repeat;
+  position: relative;
   &.brdrck     { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2326112273/picswitch-brdrck-sJC7Ax.png); }
   &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
   &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
@@ -294,4 +293,47 @@ h2.day {
   &.jasonlong { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1409429799/jason_summer.jpg); }
   &.rsanheim { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2099222922/rob-jruby-shirt.jpeg); }
 }
+.avatar.manolosavi .avatar-tip {margin-left: 5px;}
+.avatar.cypriss .avatar-tip {margin-left: -7px;}
+.avatar.rnorgan .avatar-tip {margin-left: -26px;}
+.avatar.neighthen .avatar-tip {margin-left: -5px;}
+.avatar.meyer .avatar-tip {margin-left: 5px;}
+.avatar.pixeliris .avatar-tip {margin-left: 10px;}
+.avatar.janette .avatar-tip {margin-left: -9px;}
+.avatar.thisisrobv .avatar-tip {margin-left: 20px;}
+.avatar.chriseppstein .avatar-tip {margin-left: -3px;}
+.avatar.ped .avatar-tip {margin-left: 7px;}
+.avatar.seaofclouds .avatar-tip {margin-left: -3px;}
+.avatar.nrrrdcore .avatar-tip {margin-left: -15px;}
+.avatar.zapnap .avatar-tip {margin-left: 5px;}
 
+.avatar-tip {
+  @include inline-block;
+  @include background-image(linear-gradient(rgba(41,41,40,0.9), rgba(0,0,0,0.9)));
+  @include box-shadow(inset 0 1px 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.35));
+  @include border-radius(4px);
+  border: 1px solid #000;
+  padding: 3px;
+  font-family: $sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  z-index: 4;
+  white-space: nowrap;
+  opacity: 0;
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #000 transparent transparent;
+    position: absolute;
+    display: block;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+  }
+}

@@ -7,8 +7,9 @@
     / Use title if it's in the page YAML frontmatter
     %title= "Title, changeme » #{data.page.title}" || "The Title, changeme"
     = stylesheet_link_tag "screen"
-    = javascript_include_tag  "all"
   %body{:class => page_classes}
     .wrapper
       = yield
     .timeline
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    = javascript_include_tag  "all"
