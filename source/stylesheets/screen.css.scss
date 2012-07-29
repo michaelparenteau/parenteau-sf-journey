@@ -133,9 +133,42 @@ section {
     img {
       @include inline-block;
       @include border-radius(8px);
+      @include transition(all 0.2s);
       width: 100px;
       margin: 0 5px 10px 0;
+      &:hover {
+        @include transform(scale(2));
+        @include box-shadow(0 0 0 1px #fff, 2px 2px 10px #000);
+        cursor: pointer;
+      }
     }
+  }
+}
+
+.imageviewer {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10000;
+  display: none;
+  cursor: pointer;
+  img {
+    @include box-shadow(0 0 0 1px #fff, 2px 2px 10px #000);
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 75px;
+  }
+  span {
+    display: block;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 20px;
+    font-family: $sans-serif;
   }
 }
 

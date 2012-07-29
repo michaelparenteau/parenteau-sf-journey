@@ -10,4 +10,31 @@ $(document).ready(function() {
       $(this).remove('span')
     })
   });
-});
+
+  $('img').click(function() {
+    var imageviewer = $('.imageviewer')
+    var clone = $(this).clone()
+    var caption = $(clone).attr('alt')
+
+    closeImageViewer = function() {
+      imageviewer.fadeOut(250, function() {
+        imageviewer.empty()
+      })
+    }
+
+    imageviewer.html(clone);
+    $(clone).before('<span>'+caption+'</span>')
+
+    imageviewer.fadeIn(250, function() {
+      imageviewer.click(function() {
+        closeImageViewer()
+      })
+      $(document).keyup(function(e){
+        if(e.keyCode === 27) {
+          closeImageViewer()
+        }
+      })
+    })
+  })
+
+})
