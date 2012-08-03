@@ -15,6 +15,7 @@ $(document).ready(function() {
     var imageviewer = $('.imageviewer')
     var clone = $(this).clone()
     var caption = $(clone).attr('alt')
+    clone.attr('src', clone.data('full-size'))
 
     closeImageViewer = function() {
       imageviewer.fadeOut(250, function() {
