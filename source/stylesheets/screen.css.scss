@@ -4,7 +4,7 @@
 @import "partials/mixins";
 
 $sans-serif: "helvetica neue", helvetica, arial, sans-serif;
-$serif: Palatino;
+$serif: adelle;
 
 @include font-face("League Gothic", font-files("/fonts/League_Gothic.ttf", "/fonts/League_Gothic.eot", "/fonts/League_Gothic.svg", "/fonts/League_Gothic.woff"));
 
@@ -16,7 +16,7 @@ $serif: Palatino;
 
 html {
   @include background-size(cover);
-  background: url(/images/golden-gate.jpg) no-repeat center top fixed;
+  background: url(/images/golden-gate.jpg) no-repeat fixed center top;
 }
 
 h2 {
@@ -28,15 +28,15 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 38px;
   color: #333;
   margin-bottom: 10px;
-  font-family: "League Gothic";
+  font-family: Adelle;
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 28px;
   margin-bottom: 20px;
   color: #666;
@@ -48,9 +48,17 @@ ul {
   padding-left: 20px;
   li {
     list-style-type: square;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 28px;
   }
+}
+
+blockquote {
+  font-family: palatino;
+  color: #666;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
 }
 
 img { max-width: 100%; }
@@ -76,12 +84,12 @@ header.main {
   padding: 20px;
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 4;
 }
 
 .wrapper {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .timeline {
@@ -94,9 +102,10 @@ header.main {
   position: fixed;
   top: 0;
   width: 8px;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
 }
+
 .container {
   width: 960px;
   margin: 0 auto;
@@ -132,7 +141,7 @@ section {
     color: #666;
   }
   &.day {
-    padding-top: 180px;
+    padding-top: 200px;
     background: #fff;
     &.one { background: #fff url(/images/maps/day-1.jpg) 0 0 no-repeat; }
     &.two { background: #fff url(/images/maps/day-2.jpg) 0 0 no-repeat; }
@@ -254,11 +263,6 @@ h2.day {
   blockquote {
     @include box-styles;
     @include section-tip($border-tip: true);
-    font-family: $serif;
-    color: #666;
-    font-size: 24px;
-    line-height: 30px;
-    font-style: italic;
     margin: 30px 0;
     position: relative;
   }
@@ -363,7 +367,7 @@ h2.day {
   color: #fff;
   position: absolute;
   top: 15px;
-  z-index: 4;
+  z-index: 5;
   white-space: nowrap;
   opacity: 0;
   &:after {
@@ -378,5 +382,123 @@ h2.day {
     bottom: -10px;
     left: 50%;
     margin-left: -5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  blockquote {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .intro blockquote {
+    padding: 20px;
+  }
+  article {
+    width: 100%;
+    margin: 0 auto 50px;
+  }
+  section {
+    padding: 20px;
+    header {
+      height: auto;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 10px;
+    }
+    &.day {
+      @include background-size(150%);
+      &.one { background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat; }
+      &.two { background: #fff url(/images/maps/day-2.jpg) center 0 no-repeat; }
+      &.three { background: #fff url(/images/maps/day-3.jpg) center 0 no-repeat; }
+      &.four { background: #fff url(/images/maps/day-4.jpg) center 0 no-repeat; }
+      &.five { background: #fff url(/images/maps/day-5.jpg) center 0 no-repeat; }
+      &.six { background: #fff url(/images/maps/day-6.jpg) center 0 no-repeat; }
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  html {
+    background: #ebebeb;
+  }
+  .mobile-bkg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+  html {
+    background: #ebebeb;
+  }
+  .mobile-bkg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+  }
+  section {
+    header {
+      font-size: 8px;
+      line-height: 10px;
+    }
+    &.day {
+//      @include background-size(150%);
+      &.one {
+        background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat;
+        padding-top: 170px;
+      }
+      &.two {
+        @include background-size(150%);
+        background: #fff url(/images/maps/day-2.jpg) center 30px no-repeat;
+        .date { top: 70px; }
+      }
+      &.three {
+        @include background-size(150%);
+        background: #fff url(/images/maps/day-3.jpg) center 30px no-repeat; 
+        .date { top: 70px; }
+      }
+      &.four { 
+        @include background-size(150%);
+        background: #fff url(/images/maps/day-4.jpg) center 30px no-repeat; 
+        .date { top: 70px; }
+      }
+      &.five { 
+        @include background-size(150%);
+        background: #fff url(/images/maps/day-5.jpg) center 30px no-repeat; 
+        .date { top: 70px; }
+      }
+      &.six { 
+        @include background-size(150%);
+        background: #fff url(/images/maps/day-6.jpg) center 30px no-repeat; 
+        .date { top: 70px; }
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }
+  h2.day {
+    width: 80px;
+    height: 80px;
+    span {
+      &.label { margin-top: 18px; }
+    }
+  }
+  .date {
+    position: absolute;
+    top: 50px;
+    left: 10px;
   }
 }
