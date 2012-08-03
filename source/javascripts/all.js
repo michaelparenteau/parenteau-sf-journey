@@ -22,8 +22,9 @@ $(document).ready(function() {
         imageviewer.empty()
       })
     }
-
+    
     imageviewer.html(clone);
+    $(clone).before('<span class="loading"></span>')
     $(clone).before('<span>'+caption+'</span>')
 
     imageviewer.fadeIn(250, function() {

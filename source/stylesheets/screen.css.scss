@@ -87,7 +87,7 @@ a {
   left: 50%;
   top: 10px;
   margin-left: 250px;
-  z-index: 100000;
+  z-index: 9000;
   cursor: pointer;
   span {
     @include inline-block;
@@ -103,7 +103,7 @@ a {
     @include border-radius(8px);
     position: absolute;
     width: 100px;
-    z-index: 1000000;
+    z-index: 8000;
     right: 0;
     top: 40px;
     font-family: helvetica, arial, sans-serif;
@@ -252,6 +252,8 @@ section {
     max-width: 90%;
     max-height: 90%;
     margin-top: 75px;
+    z-index: 20000;
+    position: relative;
   }
   span {
     display: block;
@@ -262,6 +264,19 @@ section {
     top: 0;
     padding: 20px;
     font-family: $sans-serif;
+    &.loading {
+      @include border-radius(8px);
+      display: block;
+      width: 60px;
+      height: 60px;
+      background: #000 url(/images/loading.gif) 0 0 no-repeat;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-top: -30px;
+      margin-left: -30px;
+      z-index: 20000;
+    }
   }
 }
 
