@@ -15,8 +15,8 @@ $serif: adelle;
 }
 
 html {
-  @include background-size(cover);
   background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+  @include background-size(cover);
 }
 
 h2 {
@@ -143,12 +143,30 @@ section {
   &.day {
     padding-top: 200px;
     background: #fff;
-    &.one { background: #fff url(/images/maps/day-1.jpg) 0 0 no-repeat; }
-    &.two { background: #fff url(/images/maps/day-2.jpg) 0 0 no-repeat; }
-    &.three { background: #fff url(/images/maps/day-3.jpg) 0 0 no-repeat; }
-    &.four { background: #fff url(/images/maps/day-4.jpg) 0 0 no-repeat; }
-    &.five { background: #fff url(/images/maps/day-5.jpg) 0 0 no-repeat; }
-    &.six { background: #fff url(/images/maps/day-6.jpg) 0 0 no-repeat; }
+    &.one { 
+      background: #fff url(/images/maps/day-1.jpg) 0 0 no-repeat;
+      @include background-size(100%);
+    }
+    &.two { 
+      background: #fff url(/images/maps/day-2.jpg) 0 0 no-repeat; 
+      @include background-size(100%);
+    }
+    &.three { 
+      background: #fff url(/images/maps/day-3.jpg) 0 0 no-repeat; 
+      @include background-size(100%);
+    }
+    &.four { 
+      background: #fff url(/images/maps/day-4.jpg) 0 0 no-repeat; 
+      @include background-size(100%);
+    }
+    &.five { 
+      background: #fff url(/images/maps/day-5.jpg) 0 0 no-repeat; 
+      @include background-size(100%);
+    }
+    &.six { 
+      background: #fff url(/images/maps/day-6.jpg) 0 0 no-repeat; 
+      @include background-size(100%);
+    }
     img {
       @include inline-block;
       @include border-radius(8px);
@@ -234,7 +252,6 @@ h2.day {
 .intro {
   padding-top: 100px;
   .parenteau {
-    @include background-size(130px);
     @include border-radius(50%);
     @include box-shadow(inset 3px 3px 10px rgba(255,255,255,0.75), 1px 1px 6px rgba(0,0,0,0.75));
     border: 1px solid #333;
@@ -243,6 +260,7 @@ h2.day {
     width: 120px;
     height: 120px;
     background: url(https://twimg0-a.akamaihd.net/profile_images/2167429710/michael.png) -8px top no-repeat;
+    @include background-size(130px);
     display: block;
     margin: 10px auto 0;
   }
@@ -267,9 +285,9 @@ h2.day {
     position: relative;
   }
   .flight-info {
-    @include background-size(auto);
     height: 350px;
     background: #fff url(/images/flight-map.jpg) center center no-repeat;
+    @include background-size(auto);
     p {
       background: url(/images/smile.png) 0 0 no-repeat;
       font-family: $sans-serif;
@@ -286,21 +304,23 @@ h2.day {
 .avatar {
   @include inline-block;
   @include border-radius(50%);
-  @include background-size(100%);
   width: 80px;
   height: 80px;
   margin: 0 5px 10px 0;
   background-position: 0 0;
   background-repeat: no-repeat;
   position: relative;
+  &, &:hover {
+    @include background-size(100%);
+  }
   &.brdrck     { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2326112273/picswitch-brdrck-sJC7Ax.png); }
   &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
   &.manolosavi { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1292064532/square.png); }
   &.joshuarudd { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1160399946/joshua_crop.jpg); }
   &.chadbercea { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2398490084/wnciugrzwe58kxgu0rc7.jpeg); }
   &.cypriss {
-    @include background-size(150%);
     background: url(https://twimg0-a.akamaihd.net/profile_images/1214777950/jonathan_640.jpg) center top no-repeat;
+    @include background-size(150%);
   }
   &.rnorgan { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2302468473/sd8dp2qkqdwb26c82xlr.jpeg); }
   &.brianbenitez { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2147034720/avatar.png); }
@@ -316,25 +336,25 @@ h2.day {
   &.adamhendle { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2169236472/adamleah2.jpg); }
   &.coreyr { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1496921904/262915_10100287451172368_2732438_51158296_5280262_n.jpg); }
   &.thisisrobv { 
-    @include background-size(120%);
     background-image: url(https://twimg0-a.akamaihd.net/profile_images/1572072322/photo.JPG);
+    @include background-size(120%);
   }
   &.ariellescott { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2064402384/arielleatcomp.jpg); }
   &.baxterstrikes { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2218403983/rsz_1133609337298144.jpg); }
   &.bennyfreshness { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1899353185/headshot.jpg); }
   &.chriseppstein { 
-    @include background-size(115%);
     background-position: right 0;
     background-image: url(https://twimg0-a.akamaihd.net/profile_images/1157553493/DSCN1412.jpg); 
+    @include background-size(115%);
   }
   &.ped { background-image: url(https://twimg0-a.akamaihd.net/profile_images/55715463/eu-ms.jpg); }
   &.hone02 { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2189439501/terence.jpg); }
   &.seaofclouds { background-image: url(https://twimg0-a.akamaihd.net/profile_images/20609372/birdie-icon.png); }
   &.nrrrdcore { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2233437415/image.jpg); }
   &.zapnap {
-    @include background-size(133%);
     background-position: right 0;
     background-image: url(https://twimg0-a.akamaihd.net/profile_images/2294134316/b2j58mqsubr3svlxbakn.jpeg); 
+    @include background-size(133%);
   }
   &.jsncostello { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1352411554/JC.png); }
   &.jasonlong { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1409429799/jason_summer.jpg); }
@@ -406,13 +426,30 @@ h2.day {
       padding: 10px;
     }
     &.day {
-      @include background-size(150%);
-      &.one { background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat; }
-      &.two { background: #fff url(/images/maps/day-2.jpg) center 0 no-repeat; }
-      &.three { background: #fff url(/images/maps/day-3.jpg) center 0 no-repeat; }
-      &.four { background: #fff url(/images/maps/day-4.jpg) center 0 no-repeat; }
-      &.five { background: #fff url(/images/maps/day-5.jpg) center 0 no-repeat; }
-      &.six { background: #fff url(/images/maps/day-6.jpg) center 0 no-repeat; }
+      &.one { 
+        background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
+      &.two { 
+        background: #fff url(/images/maps/day-2.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
+      &.three { 
+        background: #fff url(/images/maps/day-3.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
+      &.four { 
+        background: #fff url(/images/maps/day-4.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
+      &.five { 
+        background: #fff url(/images/maps/day-5.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
+      &.six { 
+        background: #fff url(/images/maps/day-6.jpg) center 0 no-repeat; 
+        @include background-size(150%);
+      }
       img {
         width: 80px;
       }
@@ -454,34 +491,34 @@ h2.day {
       line-height: 10px;
     }
     &.day {
-//      @include background-size(150%);
       &.one {
         background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat;
+        @include background-size(150%);
         padding-top: 170px;
       }
       &.two {
-        @include background-size(150%);
         background: #fff url(/images/maps/day-2.jpg) center 30px no-repeat;
+        @include background-size(150%);
         .date { top: 70px; }
       }
       &.three {
+        background: #fff url(/images/maps/day-3.jpg) center 30px no-repeat;
         @include background-size(150%);
-        background: #fff url(/images/maps/day-3.jpg) center 30px no-repeat; 
         .date { top: 70px; }
       }
       &.four { 
-        @include background-size(150%);
         background: #fff url(/images/maps/day-4.jpg) center 30px no-repeat; 
+        @include background-size(150%);
         .date { top: 70px; }
       }
       &.five { 
-        @include background-size(150%);
         background: #fff url(/images/maps/day-5.jpg) center 30px no-repeat; 
+        @include background-size(150%);
         .date { top: 70px; }
       }
       &.six { 
-        @include background-size(150%);
         background: #fff url(/images/maps/day-6.jpg) center 30px no-repeat; 
+        @include background-size(150%);
         .date { top: 70px; }
       }
       img {
