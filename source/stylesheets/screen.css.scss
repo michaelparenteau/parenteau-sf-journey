@@ -513,6 +513,12 @@ h2.day {
       }
       img {
         width: 80px;
+        @include transition(none);
+        &:hover {
+          @include transform(none);
+          @include box-shadow(none);
+          border: none;
+        }
       }
     }
   }
