@@ -14,9 +14,13 @@ $serif: adelle;
   @include box-sizing(border-box);
 }
 
-html {
+body {
   background: url(/images/golden-gate.jpg) no-repeat fixed center top;
   @include background-size(cover);
+  &.data {
+    background: #637285 url(/images/body-map.jpg) no-repeat fixed center top;
+    @include background-size(cover);
+  }
 }
 
 h2 {
@@ -77,16 +81,15 @@ a {
   @include inline-block;
   @include border-radius(4px);
   @include background-image(linear-gradient(rgba(0,0,0,0.1), rgba(255,255,255,0.1)));
-  @include box-shadow(inset 1px 1px 0 #fff, 1px 1px 3px rgba(0,0,0,0.35));
-  border: 1px solid #999;
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(255,255,255,0.2));
+  border: 1px solid #000;
   width: 35px;
   height: 35px;
   color: #999;
   position: fixed;
   padding: 5px;
-  left: 50%;
-  top: 10px;
-  margin-left: 250px;
+  top: 5px;
+  right: 10px;
   z-index: 9000;
   cursor: pointer;
   span {
@@ -98,14 +101,14 @@ a {
   }
   ul {
     @include background-image(linear-gradient(rgba(41,41,40,0.9), rgba(0,0,0,0.9)));
-    @include box-shadow(inset 0 0 10px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.35));
+    @include box-shadow(0 1px 2px rgba(0,0,0,0.35));
+    @include border-bottom-radius(4px);
     border: 1px solid #000;
-    @include border-radius(8px);
     position: absolute;
-    width: 100px;
+    width: 150px;
     z-index: 8000;
     right: 0;
-    top: 40px;
+    top: 39px;
     font-family: helvetica, arial, sans-serif;
     padding: 0;
     display: none;
@@ -117,7 +120,7 @@ a {
       margin: 0;
       a {
         display: block;
-        padding: 7px 12px;
+        padding: 15px 20px;
         color: #bbb;
         &:hover {
           background: rgba(255,255,255,0.15);
@@ -134,9 +137,9 @@ header.main {
   border-bottom: 1px solid #000;
   color: #999;
   font-family: $sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 15px;
   position: fixed;
   width: 100%;
   z-index: 4;
@@ -170,6 +173,10 @@ article {
   width: 600px;
   margin: 0 auto 30px;
   padding-top: 20px;
+}
+
+.data section.day {
+  padding-top: 80px;
 }
 
 section {
@@ -222,6 +229,38 @@ section {
     &.six { 
       background: #fff url(/images/maps/day-6.jpg) 0 0 no-repeat; 
       @include background-size(100%);
+    }
+    .offices {
+      a {
+        @include inline-block;
+        @include border-radius(8px);
+        border: 1px solid #bbb;
+        width: 100px;
+        height: 100px;
+        margin: 0 5px 10px 0;
+        text-indent: -100%;
+        overflow: hidden;
+        &.uservoice {
+          background: url(https://twimg0-a.akamaihd.net/profile_images/336739559/twitter_avatar_UserVoice.png);
+          @include background-size(100%);
+        }
+        &.storenvy {
+          background: url(https://twimg0-a.akamaihd.net/profile_images/1893434040/420682_10150621152802705_44312717704_9316187_202084064_n.jpg);
+          @include background-size(100%);
+        }
+        &.heroku {
+          background: url(https://twimg0-a.akamaihd.net/profile_images/2182907658/heroku-logo-for-facebook.png);
+          @include background-size(100%);
+        }
+        &.dropbox {
+          background: url(https://twimg0-a.akamaihd.net/profile_images/480262550/box.png);
+          @include background-size(100%);
+        }
+        &.github {
+          background: url(https://twimg0-a.akamaihd.net/profile_images/651575553/twittergithub2.png);
+          @include background-size(100%);
+        }
+      }
     }
     img {
       @include inline-block;
@@ -430,6 +469,13 @@ h2.day {
   &.jsncostello { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1352411554/JC.png); }
   &.jasonlong { background-image: url(https://twimg0-a.akamaihd.net/profile_images/1409429799/jason_summer.jpg); }
   &.rsanheim { background-image: url(https://twimg0-a.akamaihd.net/profile_images/2099222922/rob-jruby-shirt.jpeg); }
+  &.relevance { 
+    background-image: url(https://twimg0-a.akamaihd.net/profile_images/804884195/BW-300x300-clear.png); 
+    @include border-radius(0px);
+    &:hover {
+      background-color: #fff;
+    }
+  }
 }
 .avatar.manolosavi .avatar-tip {margin-left: 5px;}
 .avatar.cypriss .avatar-tip {margin-left: -7px;}
@@ -552,6 +598,15 @@ h2.day {
     z-index: 1;
     background: url(/images/golden-gate.jpg) no-repeat fixed center top;
   }
+  .data .mobile-bkg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #637285 url(/images/body-map.jpg) no-repeat fixed center top;
+  }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px), only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
@@ -566,6 +621,15 @@ h2.day {
     right: 0;
     z-index: 1;
     background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+  }
+  .data .mobile-bkg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #637285 url(/images/body-map.jpg) no-repeat fixed center top;
   }
   section {
     header {

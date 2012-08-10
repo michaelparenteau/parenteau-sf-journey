@@ -13,7 +13,24 @@
       try{Typekit.load();}catch(e){}
   %body{:class => page_classes}
     .wrapper
+      %header.main
+        San Francisco 2012
+        .nav
+          %span &nbsp;
+          %ul
+            %li= link_to "The story", "/"
+            %li= link_to "The data", "/data"
       = yield
+      %article
+        %h2.day
+          %span.label fin
+          %span.value ~
+        %section.end
+          %h3 super high 5
+          %p 
+            I want to say a special thank you to #{link_to "Relevance", "http://thinkrelevance.com"}. I could not have done this without their support. For info on this site, see the #{link_to "github repo", "http://github.com/michaelparenteau/parenteau-sf-journey"}. I hope you enjoyed the show.
+          %p
+            %a.avatar.relevance{:href => "https://thinkrelevance.com", :name => "Relevance, Inc."}
     .timeline
     .imageviewer
     .mobile-bkg

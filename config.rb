@@ -28,6 +28,8 @@ end
 #   page "/admin/*"
 # end
 
+activate :directory_indexes
+
 # Proxy (fake) files
 # page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
 #   @which_fake_page = "Rendering a fake page with a variable"
