@@ -572,6 +572,12 @@ h2.day {
         background: #fff url(/images/maps/day-6.jpg) center 0 no-repeat; 
         @include background-size(150%);
       }
+      .offices {
+        a {
+          width: 80px;
+          height: 80px;
+        }
+      }
       img {
         width: 80px;
         @include transition(none);
