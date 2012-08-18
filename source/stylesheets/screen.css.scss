@@ -613,6 +613,7 @@ h2.day {
     right: 0;
     z-index: 1;
     background: #637285 url(/images/body-map.jpg) no-repeat fixed center top;
+    @include background-size(300%);
   }
 }
 
@@ -638,6 +639,7 @@ h2.day {
     right: 0;
     z-index: 1;
     background: #637285 url(/images/body-map.jpg) no-repeat fixed center top;
+    @include background-size(300%);
   }
   section {
     header {
@@ -693,22 +695,3 @@ h2.day {
     left: 10px;
   }
 }
-
-//@media only screen and (min-width: 1500px), only screen and (-webkit-min-device-pixel-ratio: 1.5) {
-//  section {
-//    padding: 20px;
-//    header {
-//      height: 40px;
-//      font-size: 16px;
-//      line-height: 20px;
-//      padding: 10px;
-//    }
-//    &.day {
-//      &.one, &.two, &.three, &.four, &.five, &.six {
-//        background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat;
-//        @include background-size(100%);
-//        padding-top: 200px;
-//      }
-//    }
-//  }
-//}
