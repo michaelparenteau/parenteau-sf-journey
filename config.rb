@@ -2,9 +2,9 @@
 # Compass
 ###
 
-# compass_config do |config|
-#   config.output_style = :compressed
-# end
+compass_config do |config|
+  config.output_style = :compressed
+end
 
 ###
 # Page options, layouts, aliases and proxies
