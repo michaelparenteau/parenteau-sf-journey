@@ -602,7 +602,8 @@ h2.day {
     left: 0;
     right: 0;
     z-index: 1;
-    background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+    background: url(/images/golden-gate-mobile.jpg) no-repeat fixed center top;
+    @include background-size(150%);
   }
   .data .mobile-bkg {
     position: fixed;
@@ -626,7 +627,8 @@ h2.day {
     left: 0;
     right: 0;
     z-index: 1;
-    background: url(/images/golden-gate.jpg) no-repeat fixed center top;
+    background: url(/images/golden-gate-mobile.jpg) no-repeat fixed center top;
+    @include background-size(150%);
   }
   .data .mobile-bkg {
     position: fixed;
@@ -691,3 +693,22 @@ h2.day {
     left: 10px;
   }
 }
+
+//@media only screen and (min-width: 1500px), only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+//  section {
+//    padding: 20px;
+//    header {
+//      height: 40px;
+//      font-size: 16px;
+//      line-height: 20px;
+//      padding: 10px;
+//    }
+//    &.day {
+//      &.one, &.two, &.three, &.four, &.five, &.six {
+//        background: #fff url(/images/maps/day-1.jpg) center 0 no-repeat;
+//        @include background-size(100%);
+//        padding-top: 200px;
+//      }
+//    }
+//  }
+//}
